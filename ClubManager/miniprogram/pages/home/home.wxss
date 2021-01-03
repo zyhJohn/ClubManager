@@ -1,0 +1,219 @@
+.goTop {
+  height: 80rpx;
+  width: 80rpx;
+  position: fixed;
+  bottom: 50rpx;
+  background: rgba(0, 0, 0, 0.3);
+  right: 30rpx;
+  border-radius: 50%;
+  z-index: 99;
+}
+.index_logo {
+  margin-left: 10rpx;
+  width: 100rpx;
+  height: 80rpx;
+}
+.stj_index {
+  height: 100vh;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+.index_swiper {
+  background-color: #ffc609;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.index_swiper swiper {
+  width: 710rpx;
+  height: 400rpx;
+}
+.index_swiper swiper .swiper-image {
+  width: 710rpx;
+  height: 400rpx;
+  border-radius: 40rpx;
+}
+.hot_club {
+  color: #ff3600;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  font-size: 40rpz;
+  font-weight: bold;
+  background-color: #ffc609;
+}
+.index_cate {
+  padding-top: 20rpx;
+  background: url('https://ae01.alicdn.com/kf/H0f7eb645b84e4eeeac9bad21b5bbf73cM.jpg');
+  background-size: 750rpx 400rpx;
+}
+.index_content {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding: 20rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+}
+.index_content view {
+  display: flex;
+  width: 680rpx;
+}
+.index_content navigator {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  text-align: center;
+  flex: 1;
+}
+.index_content navigator image {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: -20rpx;
+  width: 80%;
+}
+.index_content navigator text {
+  width: 80%;
+  font-size: 25rpx;
+}
+.index_chose {
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+.index_chose .club_item_mine {
+  float: left;
+  width: 120rpx;
+  height: 72rpx;
+  background: url(https://ae01.alicdn.com/kf/H3afb746d7ef24abca9f21aa8c3aab68cB.jpg);
+  background-size: 120rpx 72rpx;
+}
+.index_chose .index_tab {
+  padding-top: 10rpx;
+}
+.index_chose .index_tab .index_club {
+  margin-left: 380rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.index_chose .on {
+  border-bottom: solid 4px #ffe609;
+}
+.index_chose .index_act {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.index_club_tab {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  padding: 50rpx;
+  border-radius: 100rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+.index_club_tab .club_item_content {
+  float: left;
+}
+.index_club_tab .club_item_content .club_item_iconandtitle {
+  overflow: hidden;
+  margin-top: -5rpx;
+}
+.index_club_tab .club_item_content .club_item_iconandtitle .club_item_title {
+  float: left;
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_content .club_item_iconandtitle .club_item_icon {
+  float: right;
+  background-color: #ff2a00;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+}
+.index_club_tab .club_item_content .club_item_iconandtitle .club_item_icon text {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_content .club_item {
+  height: 50rpx;
+}
+.index_club_tab .club_item_content .club_item .club_item_member {
+  float: left;
+}
+.index_club_tab .club_item_content .club_item .club_item_member text {
+  color: #515151;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_content .club_item .club_item_fans {
+  float: left;
+  margin-left: 20rpx;
+}
+.index_club_tab .club_item_content .club_item .club_item_fans text {
+  color: #515151;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_content .club_item_tab {
+  margin-top: 0rpx;
+  height: 50rpx;
+}
+.index_club_tab .club_item_content .club_item_tab .club_item_tab1 {
+  float: left;
+  margin-top: 5rpx;
+  padding: 5rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: #868686;
+}
+.index_club_tab .club_item_content .club_item_tab .club_item_tab1 text {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_content .club_item_tab .club_item_tab2 {
+  float: left;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
+  padding: 5rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: #868686;
+}
+.index_club_tab .club_item_content .club_item_tab .club_item_tab2 text {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_content .club_item_tab .club_item_tab3 {
+  float: left;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
+  padding: 5rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: #868686;
+}
+.index_club_tab .club_item_content .club_item_tab .club_item_tab3 text {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.index_club_tab .club_item_pic {
+  float: right;
+}
+.index_club_tab .club_item_pic image {
+  margin-right: -10rpx;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+}
+.index_club_tab .club_describe {
+  float: left;
+  margin-top: 10rpx;
+}
+.index_club_tab .club_describe text {
+  font-size: 30rpx;
+}
+.tab_content {
+  background-color: #f2f2f2;
+  margin-top: -10rpx;
+}

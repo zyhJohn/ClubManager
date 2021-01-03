@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/club/club",
+    "pages/activity/activity",
+    "pages/setting/setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "社团管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "navBar": "/components/navBar/navBar"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#515151",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "icons/tabbar-icon/home.png",
+        "selectedIconPath": "icons/tabbar-icon/home-yellow.png"
+      },
+      {
+        "pagePath": "pages/club/club",
+        "text": "社团",
+        "iconPath": "icons/tabbar-icon/playground.png",
+        "selectedIconPath": "icons/tabbar-icon/playground-yellow.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "活动",
+        "iconPath": "icons/tabbar-icon/manage.png",
+        "selectedIconPath": "icons/tabbar-icon/manage-yellow.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "我的",
+        "iconPath": "icons/tabbar-icon/people.png",
+        "selectedIconPath": "icons/tabbar-icon/people-yellow.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

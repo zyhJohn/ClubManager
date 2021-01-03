@@ -1,0 +1,47 @@
+
+<view class="container">
+  <navigator
+  url="/pages/clubpage/clubpage?clubname={{item.name}}"
+  class="index_club_tab"
+  wx:for="{{clubitem}}"
+  wx:key="index">
+    <view class="club_item_content">
+      <view class="club_item_iconandtitle">
+        <view class="club_item_title">
+          {{item.name}}
+        </view>
+        <view class="club_item_icon">
+          十佳社团
+        </view>
+      </view>
+      
+      <view class="club_item">
+        <view class="club_item_member">
+          成员:{{item.member}}
+        </view>
+        <view class="club_item_fans">
+          粉丝数:{{item.fans}}
+        </view>
+      </view>
+      
+      <view class="club_item_tab">
+        <view class="club_item_tab1">
+          {{item.type}}
+        </view>
+        <!-- <view class="club_item_tab2">
+          <text>{{item.tips[1]}}</text>
+        </view>
+        <view class="club_item_tab3">
+          <text>{{item.tips[2]}}</text>
+        </view> -->
+      </view>
+      
+    </view>
+    <view class="club_item_pic">
+      <image class="club_item_pic_image" src="{{item.poster}}" />
+    </view>
+    <view class="club_describe">
+      {{item.describe}}
+    </view>
+  </navigator>
+</view>
