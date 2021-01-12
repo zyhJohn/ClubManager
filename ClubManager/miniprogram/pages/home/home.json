@@ -1,9 +1,4 @@
 {
-  "usingComponents": {
-    "ClubItem": "../../components/ClubItem/ClubItem",
-    "ActivityItem" : "../../components/ActivityItem/ActivityItem",
-    "NavBar" : "../../components/navBar/navBar"
-  },
-  "navigationBarTitleText": "社团主页",
-  "navigationStyle": "custom"
+  "navigationBarTitleText": "首页",
+  "usingComponents": {}
 }

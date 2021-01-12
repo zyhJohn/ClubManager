@@ -1,0 +1,75 @@
+/* pages/detail/detail.wxss */
+
+.btn-area {
+  margin-top: 30px;
+}
+
+.contain {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.menberlable {
+  width: 100%;
+}
+
+.title1 {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #159de3;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #159de3;
+}
+
+.text {
+  width: 100%;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-item{
+  width: 100%;
+  line-height: 1.5em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-item text{
+  padding-left: 20px;
+}
+
+#code {
+  color: #07c160;
+}
+
+
+.button1 {
+  background-color: #f4bd00;
+  margin-top: 10px;
+  color: white;
+}
+
+.button2 {
+  background-color: #f2f2f2;
+  margin-top: 10px;
+  color: #fa5151;
+  margin-bottom: 20px;
+}

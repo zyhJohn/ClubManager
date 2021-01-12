@@ -1,0 +1,81 @@
+<!--pages/user/user.wxml-->
+<view class="avatar-wrapper">
+    <view>
+      <view class="avatar">
+        <image style="border-radius:50%;" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+      </view>
+    </view>
+</view>
+
+<view id ="left_px">
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class='content'>
+      <view class="listimg">
+        <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/name.png"></image>
+      </view>
+      <view class="section__title">姓名</view>
+    </view>
+    <input  name="input" hidden="{{inputhid}}" placeholder="请输入您的姓名" bindinput="getNameInput"/>
+    <label class="fixedmsg" hidden="{{fixedhid}}">{{name}}</label>
+    <view class="divLine"></view>
+  </view>
+
+  <view class="section">
+    <view class='content'>
+      <view class="listimg">
+        <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/num.png"></image>
+      </view>
+      <view class="section__title">学工号</view>
+    </view>
+    <input name="input"  type="number" hidden="{{inputhid}}" placeholder="请输入您的学工号" bindinput="getNoInput"/>
+    <label class="fixedmsg" hidden="{{fixedhid}}">{{no}}</label>
+    <view class="divLine"></view>
+  </view>
+
+  <view class="section section_gap">
+    <view class='content'>
+      <view class="listimg">
+        <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/sex.png"></image>
+      </view>
+      <view class="section__title">性别</view>
+    </view>
+    <radio-group class="radio-group" hidden="{{inputhid}}" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}" wx:key="key">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+    <label class="fixedmsg" hidden="{{fixedhid}}" >{{sex}}</label>
+    <view class="divLine"></view>
+  </view>
+
+  <view class="section">
+    <view class='content'>
+      <view class="listimg">
+        <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/tel.png"></image>
+      </view>
+      <view class="section__title">电话</view>
+    </view>
+    <input name="input"  type="number"  value ="{{phone}}"placeholder="请输入您的联系方式" bindinput="getPhoneInput"/>
+    <!-- <label class="fixedmsg" hidden="{{fixedhid}}">{{phone}}</label> -->
+    <view class="divLine"></view>
+  </view>
+
+  <view class="section">
+    <view class='content'>
+      <view class="listimg">
+        <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/home.png"></image>
+      </view>
+      <view class="section__title">住址</view>
+    </view>
+    <input name="input"  value ="{{addr}}" placeholder="请输入您的住址（如寝室楼-寝室号）" bindinput="getAddrInput"/>
+    <!-- <label class="fixedmsg" hidden="{{fixedhid}}">{{addr}}</label> -->
+    <view class="divLine"></view>
+  </view>
+
+  <view class="btn-area">
+    <button type="primary" formType="submit" hidden="{{inputhid}}" >保存</button>
+    <button type="primary" formType="reset" hidden="{{!inputhid}}" >修改</button>
+  </view>
+</form>
+</view>

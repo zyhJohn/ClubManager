@@ -1,206 +1,313 @@
-//Page Object
+// pages/home/home.js
+const app = getApp()
+
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    floorstatus: '',//回到顶部
-    clubheight: 0,//社团部分高度计算结果
-    activityheight: 0,//活动部分高度计算结果
-    currentTab: 0,//当前选中的tab
-    swiperList: [
-     
-    ],//轮播图
-    cateList: [],
-    cateList1: [ //分类第一行
-      {
-        name: '兴趣',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/H4a75576ce3fe43ef8491f3af55274c68N.jpg',
-        query: 'photo'
-      },
-      {
-        name: '游戏',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/H4ce19cabf3ae4b16886e10efa81dd4caO.jpg',
-        query: 'game'
-      },
-      {
-        name: '艺术',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/Ha44e97419a554a17804bea754af82d37t.jpg',
-        query: 'music'
-      },
-      {
-        name: '组织',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/H3d6fdba9f5a24ef7bb6f7ab4e47d8155w.jpg',
-        query: 'organization'
-      }
-    ],
-    cateList2: [ //分类第二行
-      {
-        name: '志愿',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/Hcd3c9ff863ee4fb0af5a7b79e182615bV.jpg',
-        query: 'volunteer'
-      },
-      {
-        name: '动漫',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/Hc5289561f252435b95a9c7b27c70d27aS.jpg',
-        query: 'comic'
-      },
-      {
-        name: '学术',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/He4172403d8e44fc887c65c752ae9863aO.jpg',
-        query: 'film'
-      },
-      {
-        name: '运动',
-        open_type: 'switchTab',
-        image_src: 'https://ae01.alicdn.com/kf/H1ef7dd70722b49b5867dea0e8c0ad5edn.jpg',
-        query: 'chess'
-      }
-    ],
-    activityItem: [
+    username: "请去“我的”完善个人信息",
+    userstatus: app.globalData.STATUS_USER_TR,
+    userno: "2333",
 
-    ],
-    clubItem: [
-      
-      
-    
-    ]
-  },
-  sendmessage:function(e) {
-    var app=getApp();     // 取得全局App
-    app.globalData.clubtab = e.currentTarget.dataset.index
-    // let index = e.currentTarget.dataset.index
-    // wx.setStorageSync("clubtab",index);
+    searchkey: "",
+
+    rsid: "",
+    rsstatus: "",
+    rsdate: null,
+    venuename: "",
+    venuetime: "",
+    venue_id: "",
+    nowList: [],
+    historyList:[],
+    nownoen:true,
+    hisnone:true,
+    url1:"cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/ihome.png",
+    url2: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/adduser.png",
+    url3: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/add.png",
+    url4: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/user.png"
   },
 
-  goTop: function (e) {  // 一键回到顶部
-    if (wx.pageScrollTo) {
-      wx.pageScrollTo({
-        scrollTop: 0
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
-      })
-    }
-  },
-
-  //options(Object)
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
+    wx.showLoading({
+      title:"慢吞吞地加载中",
+      mask:true,
+    })
+    // this.init()
+    this.getUsermsg();
 
-    this.getSwiperList()
-   
-
-    this.getUserClubList()
-    this.getUserActivityList()
-
-  
   },
 
-  onShow(){
-    this.getUserClubList()
-    this.getSwiperList()
-   
-    this.getUserActivityList()
-
-    // this.setcHeight()
-    // this.setaHeight()
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    wx.hideLoading()
   },
 
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.getUsermsg();
 
-  setaHeight() {
-    var that = this;
-    this.setData({ activityheight: this.data.activityItem.length * 750 })
-    // console.log(this.data.activityheight);
   },
-  setcHeight() {
-    var that = this;
-    this.setData({ clubheight: this.data.clubItem.length * 560 })
-    // console.log(this.data.clubItem); 
-    // console.log(this.data.clubheight);
-  },
-  bindsearch(){
+
+  appoint: function () {
     wx.navigateTo({
-      url: '/pages/search/search',
-    });
+      url: '../detail/detail?reser_id=' + this.data.rsid + "&venue_id=" + this.data.venue_id
+    })
   },
 
-  bindChange: function (e) {
-    var that = this;
-    that.setData({ currentTab: e.detail.current });
+  appoint2: function (event) {
+    // console.log(event)
+    var i = event.currentTarget.dataset.index
+    console.log("sadasd" + i)
+    wx.navigateTo({
+      url: '../detail/detail?reser_id=' + this.data.historyList[i].reserid + "&venue_id=" + this.data.historyList[i].venueid
+    })
   },
-  // 点击切换选项卡
-  clickTab: function (e) {
-    var that = this;
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
+  button1: function () {
+    // wx.navigateTo({
+    //   url: '../home/home'
+    // })
+    this.onLoad()
+    this.onReady()
+  },
+
+  button2: function () {
+    if (app.globalData.hasuser  ){
+      wx.redirectTo({
+        url: '../club/club'
+      })
     } else {
-      that.setData({
-        currentTab: e.target.dataset.current
+      wx.showToast({
+        title: '请先完善个人信息',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+
+  },
+
+  button3: function () {
+    if (app.globalData.hasuser) {
+      wx.navigateTo({
+        url: '../clubmanager/clubmanager'
+      })
+    } else {
+      wx.showToast({
+        title: '请先完善个人信息',
+        icon: 'none',
+        duration: 2000
       })
     }
   },
 
-  switchTab(event) {
-    var cur = event.detail.current;
+  button4: function () {
+    wx.navigateTo({
+      url: '../user/user'
+    })
+  },
+
+  search:function(){
+    wx.navigateTo({
+      url: '../invite/invite?search_key='+searchkey,
+    })
+  },
+
+  getUsermsg: function () {
+    const db = wx.cloud.database()
+    db.collection('user').where({
+      _openid: app.globalData.openid,
+    }).get({
+      success: res => {
+        var data = res.data[0]
+        console.log('[数据库] [查询记录] 成功: ', res.data[0])
+        app.globalData.usermsg = data
+        this.setData({
+          username: data.user_name,
+          userstatus: data.user_status,
+          userno: data.user_no
+        })
+        console.log(this.data.userstatus)
+        app.globalData.hasuser = true
+        this.getNowReservation();
+        this.setHistoryReservation();
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
+  },
+
+  getSearchkey: function (e) {
     this.setData({
-      currentTab: cur,
-    });
-  },
-
-  getSwiperList() {
-    request({ 
-      url: '/swiperlist'
+      searchkey: e.detail.value,
     })
-      .then(result => {
-        this.setData({
-          swiperList: result.data.data.pic
-        })
-      })
   },
 
-  getUserActivityList(){
-    request({ 
-      url: '/useractivity',
+  getNowReservation: function () {
+    const db = wx.cloud.database()
+    const _ = db.command
+    // console.log(this.data.userno)
+    db.collection('reservation').where({
+      _id: app.globalData.usermsg.reservation_id,
+      reservation_status: _.or(_.eq(app.globalData.STATUS_RESER_WA), _.eq(app.globalData.STATUS_RESER_WP), _.eq(app.globalData.STATUS_RESER_OK)),
+    }).get({
+      success: res => {
+        // console.log('[数据库] [查询记录] 成功: ', res.data[0])
+        var data = res.data[0]
+        if(data===undefined){
+          this.setData({
+            venuename: "",
+            venuetime: "",
+            rsid: "",
+            rsstatus: "",
+            venue_id: "",
+            rsdate: "",
+            nowList:[],
+            nownoen:true,
+          })
+        }else{
+          this.setData({
+            rsid: data._id,
+            rsstatus: data.reservation_status,
+            venue_id: data.venue_id,
+            rsdate: data.reservation_date,
+          })
+          var id = data.venue_id
+          this.getVenueName(id)
+        }
+
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
     })
-      .then(result => {
-        this.setData({
-          activityItem: result.data.data.activityItem
-        })
-        this.setaHeight()
-      })
   },
-    
-  getUserClubList(){
-    request({ 
-      url: '/userclub',
+  getVenueName: function (id) {
+    // console.log("asdasda",id)
+    const db = wx.cloud.database()
+    db.collection('venue').where({
+      _id: id,
+    }).get({
+      success: res => {
+        // console.log('[数据库] [查询记录] 成功: ', res.data[0])
+        var data = res.data[0]
+        this.setData({
+          venuename: data.venue_name,
+          venuetime: data.venue_time,
+        })
+        this.setNowReservation();
+
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
     })
-      .then(result => {
-        this.setData({
-          clubItem: result.data.data.clubItem
-        })
-        this.setcHeight()
-      })
   },
-
-
-
-  onPageScroll: function (e) {
-    if (e.scrollTop > 100) {
-      this.setData({
-        floorstatus: true
-      });
-    } else {
-      this.setData({
-        floorstatus: false
-      });
+  setNowReservation: function () {
+    var jstr = {}
+    jstr.name = this.data.venuename + " " + this.data.venuetime
+    jstr.date = this.data.rsdate
+    jstr.status = this.data.rsstatus
+    this.setData({
+      nowList: [jstr],
+    })
+    if(this.data.nowList.length>0){
+        this.setData({
+            nownoen:false,
+        })
     }
-  }
+  },
+  setHistoryReservation: function () {
+    const db = wx.cloud.database()
+    const _ = db.command
+    // console.log(this.data.userno)
+    db.collection('reservation').where({
+      user_no: this.data.userno,
+      reservation_status: _.or(_.eq(app.globalData.STATUS_RESER_FN), _.eq(app.globalData.STATUS_RESER_FD)),
+    }).get({
+      success: res => {
+        // console.log('[数据库] [查询记录] 成功: ', res.data[0])
+        var data = res.data
+        // console.log(data)
+        var list = []
+        for (var i = 0; i < data.length; i++) {
+          var jstr = {}
+          jstr.reserid = data[i]._id
+          jstr.reserdate = data[i].reservation_date
+          jstr.status = data[i].reservation_status
+          jstr.venueid = data[i].venue_id
+          jstr.venuename = ""
+          jstr.venuetime = ""
+          list.push(jstr)
+          this.setData({
+            historyList: list,
+          })
+          // console.log(this.data.historyList)
+          this.setHistoryVenue(i, data[i].venue_id)
+
+        }
 
 
-});
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
+  },
+  setHistoryVenue: function (i, id) {
+    const db = wx.cloud.database()
+    db.collection('venue').where({
+      _id: id,
+    }).get({
+      success: res => {
+        // console.log('[数据库] [查询记录] 成功: ', res.data[0])
+        var data = res.data[0]
+        var list = this.data.historyList
+        list[i].venuename = data.venue_name + " " + data.venue_time
+        list[i].venuetime = data.venue_time
+        this.setData({
+          historyList: list,
+        })
+        // console.log(this.data.historyList)
+
+        if (this.data.historyList.length > 0) {
+          this.setData({
+            hisnone: false,
+          })
+        }
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
+  },
+  
+})

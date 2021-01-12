@@ -1,0 +1,30 @@
+<!--pages/attention/attention.wxml-->
+<text class="title">⚠️使用注意事项</text>
+<view class="text">
+  <rich-text nodes="{{node1}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node2}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node3}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node4}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node5}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node6}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node7}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node8}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node9}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node10}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node11}}" bindtap="tap">
+  </rich-text>
+  <rich-text nodes="{{node12}}" bindtap="tap">
+  </rich-text>
+</view>
+
+<button class="button" type="primary"  size="default" bindtap="primary">我已阅读并同意</button> 

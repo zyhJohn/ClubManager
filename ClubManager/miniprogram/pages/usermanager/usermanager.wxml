@@ -1,0 +1,48 @@
+<!--pages/user/user.wxml-->
+<view class="avatar-wrapper">
+  <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+  <view id="titlename">小黑屋</view>
+</view>
+
+<view class="tip" hidden="{{!nouser}}">zzz暂无违约zzz</view>
+<view class="container">
+  <view class= "{{item.isTouchMove ? 'item-active' : 'item'}}" bindtouchstart='touchstart' bindtouchmove='touchmove' wx:for="{{list}}" wx:key='' data-index="{{index}}">
+    <image class="left" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+    <view class="right">
+      <view class="title">
+        <view class="name">{{item.name}}</view>
+        <view class="tel">{{item.tel}}</view>
+      </view>
+      <view class="title2">
+        <view class="sno">{{item.sno}}</view>
+      </view>
+      <view class='del' bindtap="del" data-index="{{index}}">移除</view>
+    </view>
+  </view>
+  <block wx:if="{{isShowConfirm}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>输入用户学号</text>
+            </view>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input type='number' placeholder='输入要关入小黑屋的用户学号' bindinput='setValue' ></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>仁慈一番</button>
+                </view>
+                <view class='button2'>
+                    <button catchtap='add'>关小黑屋</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>
+  <view class="btn-area">
+    <button class="button" hover-class="btn-hover" bindtap="showConfirm">添加用户</button>
+  </view>
+</view>

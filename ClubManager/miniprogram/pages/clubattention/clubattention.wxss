@@ -1,0 +1,16 @@
+/* pages/attention/attention.wxss */
+.title{
+  font-weight: bold;
+}
+.text{
+  padding: 10px;
+  text-indent: 2em;
+}
+
+
+.button-hover {
+  background-color: green;
+}
+.button {
+  margin-bottom: 10px;
+}

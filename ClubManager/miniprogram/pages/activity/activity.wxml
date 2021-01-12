@@ -1,0 +1,68 @@
+<!--pages/home/home.wxml-->
+<!-- <text>这里是个人信息\n</text> -->
+<view class='homeusermsg'>
+  <view id="userstatus">{{userstatus}}</view>
+  <view id="username">{{username}}</view>
+</view>
+
+<view class="search-text">
+  <view class='content'>
+    <input name="searchkey"  value ="{{searchkey}}"placeholder="搜索" bindinput="getSearchkey"/>
+    <view class="divLine"></view>
+    <image bindtap="search" class="img" src="{{url2}}" mode="widthFix"></image>
+  </view>
+  </view>
+
+<!-- <text>----------我是分割线----------\n</text> -->
+<text class="title">热门社团</text>
+<view class="container list-container">
+  <swiper indicator-dots="true" autoplay="true" interval="2500">
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img3.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img4.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img5.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<text class="title">全部社团\n</text>
+<view class="tip" hidden="{{!hisnone}}">空空如也</view>
+<scroll-view scroll-y="true" style="height: 320rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+  <view class="container list-container">
+    <view class="list-item" data-index="{{index}}" bindtap="appoint2" wx:for="{{historyList}}">
+      <image class="left" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img2.jpg"></image>
+      <view class="right">
+        <view class="title1">
+          <view class="time">{{item.venuename}}</view>
+          <view class="date">{{item.reserdate}}</view>
+        </view>
+        <view class="status">{{item.status}}</view>
+        <!-- </view> -->
+      </view>
+    </view>
+  </view>
+</scroll-view>
+  <!-- <view class="container"> -->
+  <view class="row">
+    <view class="column">
+      <image bindtap="button1" class="img" src="{{url1}}" mode="widthFix"></image>
+      <text class="text">活动</text>
+    </view>
+    <view class="column">
+      <image bindtap="button2" class="img" src="{{url2}}" mode="widthFix"></image>
+      <text class="text">社团</text>
+    </view>
+    <view class="column">
+      <image bindtap="button3" class="img" src="{{url3}}" mode="widthFix"></image>
+      <text class="text">管理</text>
+    </view>
+    <view class="column">
+      <image bindtap="button4" class="img" src="{{url4}}" mode="widthFix"></image>
+      <text class="text">我的</text>
+    </view>
+  </view>
+  <!-- </view> -->
