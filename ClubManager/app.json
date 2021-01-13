@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/user/user",
+    
+    "pages/usermanager/usermanager",
+
+    "pages/admincheck/admincheck",
+    "pages/adminactivity/adminactivity",
+
+    "pages/admincheckToC/admincheckToC",
+    "pages/adminclub/adminclub",
+    "pages/adminclubcheck/adminclubcheck",
+
+    "pages/club/club",
+    "pages/clubin/clubin",
+    "pages/clubclose/clubclose",
+    "pages/clubcheck/clubcheck",
+    "pages/clubdetail/clubdetail",
+    "pages/clubapply/clubapply",
+    "pages/clubattention/clubattention",
+    "pages/clubmanager/clubmanager",
+
+    "pages/activityapply/activityapply",
+    "pages/activityattention/activityattention",
+    "pages/activitymanager/activitymanager"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

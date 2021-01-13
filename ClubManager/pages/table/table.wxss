@@ -1,0 +1,60 @@
+/* pages/table/table.wxss */
+
+input{
+  margin: 10px;
+  width: 90%;
+  height: auto;
+  border: 1px solid #cccccc;
+}
+
+.container{
+  margin-top: 20px;
+}
+
+.section{
+  margin-left: 10px;
+  line-height: 1.5em;
+}
+
+check{
+  margin-left: 10px;
+}
+
+.title1{
+  display: block;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #159de3;
+}
+
+.title{
+  display: block;
+  padding: 5px;
+  padding-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #159de3;
+}
+
+textarea{
+  margin: 10px;
+  width: 90%;
+  border: 1px solid #cccccc;
+}
+
+/* btn-area{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: center;
+} */
+
+button{
+  margin: 10px;
+}
+.fixedmsg{
+  color: gray;
+}

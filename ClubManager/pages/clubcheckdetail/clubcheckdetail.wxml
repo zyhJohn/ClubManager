@@ -1,0 +1,12 @@
+<!--pages/detail/detail.wxml-->
+<!-- <text>这里是预约信息\n</text> -->
+<view id="contain">
+  <text class="title1">申请信息</text>
+  <view class="text" id="username">{{"申请人姓名："+username}}</view>
+  <view class="text" id="reason">{{"申请理由："+reason}}</view>
+  <view class="text" id="ps">{{"备注："+ps}}</view>
+
+  <view class="btn-area">
+    <button class="button1" bindtap="submit">审核通过</button>
+  </view>
+</view>

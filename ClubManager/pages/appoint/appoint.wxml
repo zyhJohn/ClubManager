@@ -1,0 +1,80 @@
+<!--logs.wxml-->
+<view>
+  <swiper indicator-dots="true" autoplay="true" interval="2500" wx:if="{{venuename=='尚雅楼'}}">
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img2.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img3.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <swiper indicator-dots="true" autoplay="true" interval="2500" wx:if="{{venuename=='致远楼'}}">
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img3.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img4.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img5.jpg"></image>
+    </swiper-item>
+  </swiper>
+
+  <scroll-view scroll-y="true" style="height: 700rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view id="container" style="display:block;">
+      <view class='item'>
+        <text>{{venuename+"毕至居"}}</text>
+      </view>
+      <view class='item'>
+        <view class='left'>场次：A场 10:00-14:00 B场 16:00-20:00</view>
+        <view class='right'></view>
+      </view>
+      <view class='item'>
+        <view class='left'>容纳：</view>
+        <view class='right'>{{venuemax}}</view>
+      </view>
+      <view class='item'>
+        <view class='left'>地址：</view>
+        <view class='right'>{{venueaddr}}</view>
+      </view>
+      <view class='item'>
+        <view class='left'>配置：</view>
+        <view class='right'>{{venuetool}}</view>
+      </view>
+      <view class='item'>
+        <view class='left'>说明：</view>
+        <view class='right'>{{venuedes}}</view>
+      </view>
+    </view>
+
+    <view class="container2" style="display:block;">
+      <view class='item'>
+        <view class='left'>预约场次:</view>
+        <view class='place'>{{venuetime}}</view>
+      </view>
+      <view class='item'>
+        <view class='left'>卫生清理费:</view>
+        <view class='pay'>￥20</view>
+      </view>
+    </view>
+
+    <view class="container2" style="display:block;">
+      <view class='item'>
+        <text bindtap="read">阅读《毕至居预约说明》</text>
+        <image class="icon" src="{{url1}}" mode="widthFix"></image>
+      </view>
+      <view class='item'>
+        <text bindtap="appointment">填写预约单</text>
+        <image class="icon" src="{{url2}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="btn-area">
+    <button class="button" hover-class="btn-hover" bindtap="submit">提交预约</button>
+  </view>
+  
+</view>

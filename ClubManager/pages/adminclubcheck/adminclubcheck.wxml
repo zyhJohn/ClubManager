@@ -1,0 +1,27 @@
+<!--pages/detail/detail.wxml-->
+<!-- <text>这里是预约信息\n</text> -->
+<view id="contain">
+  <text class="title1">社团信息</text>
+  <view class="text" id="clubname">{{"社团名："+clubname}}</view>
+  <view class="text" id="clubtype">{{"社团类型："+clubtype}}</view>
+  <view class="text" id="creattime">{{"创社时间："+creattime}}</view>
+  <view class="text" id="clubstatus">{{"社团状态："+clubstatus}}</view>
+  <view class="text" id="nummember">{{"社员总数："+nummember}}</view>
+  <view class="text" id="clubintroduce">{{"社团简介:"+clubintroduce}}</view>
+  <view class="text" id="ps">{{"备注："+ps}}</view>
+
+  <text class="title">社长信息</text>
+  <view class="text" id="leadername">{{"社长姓名："+leadername}}</view>
+  <view class="text" id="leaderphone">{{"社长联系方式："+leaderphone}}</view>
+
+  <text class="title">成员信息</text>
+  <view class="list-item" wx:for="{{menberslist}}">
+    <text class="name">{{item.name}} </text>
+    <text class="no">{{item.no}}</text>
+  </view>
+
+  <view class="btn-area">
+    <button class="button1" bindtap="submit" wx:if="{{isok}}">审核通过</button>
+    <button class="button3" bindtap="close" wx:if="{{isno}}">审核通过</button>
+  </view>
+</view>

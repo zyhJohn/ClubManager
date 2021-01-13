@@ -1,0 +1,136 @@
+/* pages/admin/admin.wxss */
+
+.avatar-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  height: 25px;
+  width: 100%;
+  background: #e27d08;
+  padding: 10px 0;
+}
+
+.avatar-wrapper image {
+  display: block;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+#username {
+  display: block;
+  position: fixed;
+  left: 70px;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+  padding: 5px;
+  padding-left: 20px;
+  font-weight: bold;
+  background-color: #e27d08;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+  box-sizing: content-box;
+}
+
+.list-container {
+  padding: 0;
+  width: 100%;
+}
+
+.list-item {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  /* border-radius: 15px; */
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  width: 100%;
+}
+
+.left {
+  padding-left: 30px;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.right {
+  width: 480rpx;
+  height: 100rpx;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.title1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.clubname {
+  font-size: 40rpx;
+  color: #000;
+}
+
+.username {
+  color: orange;
+  font-size: 35rpx;
+}
+
+.status {
+  font-size: 30rpx;
+  color: rgb(219, 64, 64);
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+}
+
+.text{
+  width: 100%;
+}
+
+.row {
+  /* border-top: 1px black; */
+  display: flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  height: 60px;
+}
+
+.tip{
+  padding: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}

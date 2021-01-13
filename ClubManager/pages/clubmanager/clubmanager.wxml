@@ -1,0 +1,43 @@
+<!--pages/admin/admin.wxml-->
+<view class="avatar-wrapper">
+  <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+  <view id="welcome">{{welcome}}</view>
+</view>
+<!-- <text>----------我是分割线----------\n</text> -->
+<text class="title">已加入的社团</text>
+<view class="tip" hidden="{{!lisnone}}">zzz暂无加入社团zzz</view>
+<scroll-view scroll-y="true" style="height: 780rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+<view>
+  <view class="container list-container">
+    <view class="list-item" wx:for="{{ClubList}}" bindtap="clubdetail"  data-index="{{index}}">
+      <image class="left" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img2.jpg"></image>
+      <view class="right">
+        <view class="title1">
+          <view class="name">{{item.clubname}}</view>
+          <view class="type">{{item.clubtype}}</view>
+        </view>
+        <view class="status">{{item.status}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+</scroll-view>
+
+<view class="row">
+  <view class="column">
+    <image bindtap="button1" class="img" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/ihome2.png" mode="widthFix"></image>
+    <text class="text">申请社团</text>
+  </view>
+  <view class="column">
+    <image bindtap="button2" class="img" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/place.png" mode="widthFix"></image>
+    <text class="text">首页</text>
+  </view>
+  <view class="column">
+    <image bindtap="button3" class="img" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/place.png" mode="widthFix"></image>
+    <text class="text">管理社团</text>
+  </view>
+  <view class="column">
+    <image bindtap="button4" class="img" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/place.png" mode="widthFix"></image>
+    <text class="text">管理活动</text>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<!--pages/detail/detail.wxml-->
+<!-- <text>这里是预约信息\n</text> -->
+<view id="contain">
+  <text class="title1">社团信息</text>
+  <view class="text" id="clubname">{{"社团名："+clubname}}</view>
+  <view class="text" id="clubtype">{{"社团类型："+clubtype}}</view>
+  <view class="text" id="creattime">{{"创社时间："+creattime}}</view>
+  <view class="text" id="clubstatus">{{"社团状态："+clubstatus}}</view>
+  <view class="text" id="nummember">{{"社员总数："+nummember}}</view>
+  <view class="text" id="clubintroduce" wx:if="{{!isleader}}">{{"社团简介:"+clubintroduce}}</view>
+  <view class="text" id="ps" wx:if="{{!isleader}}">{{"备注："+ps}}</view>
+
+  <text class="title">社长信息</text>
+  <view class="text" id="leadername">{{"社长姓名："+leadername}}</view>
+  <view class="text" id="leaderphone">{{"社长联系方式："+leaderphone}}</view>
+
+  <view class="title" wx:if="{{isleader}}">社团简介</view>
+  <textarea value="{{clubintroduce}}" placeholder="请填写社团简介" auto-focus  wx:if="{{isleader}}"  bindinput="getIntroduceInput" />
+
+
+  <view class="title"  wx:if="{{isleader}}">备注</view>
+  <textarea value="{{ps}}" placeholder="如有特殊情况，请填写备注" auto-focus wx:if="{{isleader}}" bindinput="getPsInput" />
+
+
+  <text class="title">成员信息</text>
+  <view class="list-item" wx:for="{{menberslist}}">
+    <text class="name">{{item.name}} </text>
+    <text class="no">{{item.no}}</text>
+  </view>
+
+  <view class="btn-area">
+    <button class="button1" bindtap="submit" wx:if="{{isleader}}">确认修改</button>
+    <button class="button5" bindtap="check" wx:if="{{isleader}}">添加成员</button>
+    <button class="button2" bindtap="removeMenber" wx:if="{{isleader}}">踢出成员</button>
+    <button class="button3" bindtap="changeMaster" wx:if="{{isleader}}">转让社长</button>
+    <button class="button4" bindtap="close" wx:if="{{isleader}}">解散社团</button>
+    <button class="button5" bindtap="addin" wx:if="{{!hasIn}}">加入社团</button>
+    <button class="button4" bindtap="exit" wx:if="{{hasIn&&!isleader}}">退出社团</button>
+  </view>
+</view>

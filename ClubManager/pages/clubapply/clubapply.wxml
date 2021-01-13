@@ -1,0 +1,67 @@
+<!--pages/table/table.wxml-->
+<!-- <text>毕至居使用申请表</text> -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+    <text class="title">申请人信息</text>
+    <view class="section">
+      <!-- <view class="section__title">姓名</view> -->
+      <!-- <input name="input" placeholder="请输入您的姓名"  value=""/> -->
+      <label class="fixedmsg">{{"姓名："+name}}</label>
+    </view>
+    <view class="section">
+      <!-- <view class="section__title">学工号</view> -->
+      <!-- <input name="input" placeholder="请输入您的学工号" value="{{no}}"/> -->
+      <label class="fixedmsg">{{"学工号："+no}}</label>
+    </view>
+
+    <view class="section">
+      <!-- <view class="section__title">学工号</view> -->
+      <!-- <input name="input" placeholder="请输入您的学工号" value="{{no}}"/> -->
+      <label class="fixedmsg">{{"联系电话："+phone}}</label>
+    </view>
+  
+
+    <text class="title">社团信息</text>
+    <view class="section">
+      <view class="section__title">申请社团名</view>
+      <input name="input" placeholder="请填写社团名" bindinput="getNameInput" />
+    </view>
+
+    <view class='section'>
+      <view class="section__title">申请社团类别</view>
+      <!-- 下拉框 -->
+        <view class='select_box'>
+          <view class='select' catchtap='selectTaps'>
+            <text class='select_text'>{{selectDatas[indexs]}}</text>
+          </view>
+          <view class='option_box' style='height:{{shows?(selectDatas.length>5?300:selectDatas.length*60):0}}rpx;'>
+            <text class='option' style='{{indexs==selectDatas.length-1&&"border:0;"}}' wx:for='{{selectDatas}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item}}</text>
+          </view>
+        </view>
+    </view>
+
+    <view class="section">
+      <view class="section__title">申请社团简介</view>
+      <textarea placeholder="请填写社团简介" auto-focus bindinput="getIntroduceInput" />
+    </view>
+    <view class="section">
+      <view class="section__title">申请理由</view>
+      <textarea placeholder="请填写申请理由" auto-focus bindinput="getReasonInput" />
+    </view>
+    <view class="section">
+      <view class="section__title">备注</view>
+      <textarea placeholder="如有特殊情况，请填写备注" auto-focus bindinput="getPsInput" />
+    </view>
+
+    <view class="container2" style="display:block;">
+      <view class='item'>
+        <text bindtap="read">阅读《社团守则》</text>
+        <image class="icon" src="{{url1}}" mode="widthFix"></image>
+      </view>
+    </view>
+
+  <view class="btn-area">
+    <button type="primary" bindtap="primary" formType="submit">提交申请</button>
+    <button type="warn" bindtap="warn" formType="reset">我再想想</button>
+  </view>
+</form>

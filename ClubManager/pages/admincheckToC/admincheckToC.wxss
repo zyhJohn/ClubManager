@@ -1,0 +1,21 @@
+/* pages/invite/invite.wxss */
+button{
+  margin: 10px;
+}
+
+input{
+  height: 80rpx;
+  border: 1px solid #cccccc;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.section__title{
+  display: block;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.btn-area{
+  margin-top: 20px;
+}

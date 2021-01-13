@@ -1,0 +1,41 @@
+<!--pages/table/table.wxml-->
+<!-- <text>毕至居使用申请表</text> -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+    <text class="title">申请人信息</text>
+    <view class="section">
+      <!-- <view class="section__title">姓名</view> -->
+      <!-- <input name="input" placeholder="请输入您的姓名"  value=""/> -->
+      <label class="fixedmsg">{{"姓名："+name}}</label>
+    </view>
+    <view class="section">
+      <!-- <view class="section__title">学工号</view> -->
+      <!-- <input name="input" placeholder="请输入您的学工号" value="{{no}}"/> -->
+      <label class="fixedmsg">{{"学工号："+no}}</label>
+    </view>
+
+    <view class="section">
+      <!-- <view class="section__title">学工号</view> -->
+      <!-- <input name="input" placeholder="请输入您的学工号" value="{{no}}"/> -->
+      <label class="fixedmsg">{{"联系电话："+phone}}</label>
+    </view>
+  
+
+    <text class="title">申请加入社团表</text>
+    <view class="section">
+      <label class="fixedmsg">{{"申请加入社团名："+club_name}}</label>
+    </view>
+    <view class="section">
+      <view class="section__title">申请理由</view>
+      <textarea placeholder="请填写申请理由" auto-focus bindinput="getReasonInput" />
+    </view>
+    <view class="section">
+      <view class="section__title">备注</view>
+      <textarea placeholder="如有特殊情况，请填写备注" auto-focus bindinput="getPsInput" />
+    </view>
+
+  <view class="btn-area">
+    <button type="primary" bindtap="primary" formType="submit">提交申请</button>
+    <button type="warn" bindtap="warn" formType="reset">我再想想</button>
+  </view>
+</form>

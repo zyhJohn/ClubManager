@@ -1,0 +1,65 @@
+<!--pages/table/table.wxml-->
+<!-- <text>毕至居使用申请表</text> -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <text class="title1">场地信息</text>
+    <view class="section">
+      <lable class="fixedmsg">{{"毕至居："+venuename}}</lable>
+      <text>\n</text>
+      <!-- <input name="input" placeholder="请输入您的姓名"  value=""/> -->
+      <label class="fixedmsg">{{"场次："+session}}</label>
+      <text>\n</text>
+      <label class="fixedmsg">{{"日期："+date}}</label>
+    </view>
+ 
+    <text class="title">申请人信息</text>
+    <view class="section">
+      <!-- <view class="section__title">姓名</view> -->
+      <!-- <input name="input" placeholder="请输入您的姓名"  value=""/> -->
+      <label class="fixedmsg">{{"姓名："+name}}</label>
+    </view>
+    <view class="section">
+      <!-- <view class="section__title">学工号</view> -->
+      <!-- <input name="input" placeholder="请输入您的学工号" value="{{no}}"/> -->
+      <label class="fixedmsg">{{"学工号："+no}}</label>
+    </view>
+    <view class="section">
+      <view class="section__title">电话</view>
+      <input name="input" placeholder="请输入您的联系方式" value="{{phone}}" bindinput="getPhoneInput" />
+    </view>
+  
+
+    <text class="title">活动信息</text>
+    <view class="section">
+      <view class="section__title">申请单位</view>
+      <input name="input" placeholder="如班级、社团、学生组织" bindinput="getAppSectorInput" />
+    </view>
+    <view class="section">
+      <view class="section__title">活动人数</view>
+      <input name="input" type="number" placeholder="活动人数" bindinput="getNumInput" />
+    </view>
+    <view class="section">
+      <view class="section__title">申请理由</view>
+      <textarea placeholder="请填写申请理由" auto-focus bindinput="getReasonInput" />
+    </view>
+    <view class="section section_gap">
+      <view class="section__title">是否借用刀具</view>
+      <!-- <checkbox-group class="check" name="checkbox">
+      <label><checkbox value="checkbox1"/>是</label>
+      <label><checkbox value="checkbox2"/>否</label>
+    </checkbox-group> -->
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key="key">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="section" hidden="{{!hastools}}">
+      <view class="section__title">所需刀具</view>
+      <textarea placeholder="请填写需要的种类以及数量" auto-focus bindinput="getToolsInput" />
+    </view>
+
+  <view class="btn-area">
+    <button type="primary" bindtap="primary" formType="submit">提交申请</button>
+    <button type="warn" bindtap="warn" formType="reset">我再想想</button>
+  </view>
+</form>

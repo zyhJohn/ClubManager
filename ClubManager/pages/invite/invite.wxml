@@ -1,0 +1,12 @@
+<!--pages/invite/invite.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="section">
+  <view class="section__title">活动邀请码</view>
+  <input name="input" placeholder="请输入活动邀请码" bindinput="getInviteInput"/>
+</view>
+
+<view class="btn-area">
+  <button type="primary" formType="submit">确认</button>
+  <button type="warn" formType="reset">取消</button>
+</view>
+</form>
