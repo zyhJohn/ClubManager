@@ -1,13 +1,13 @@
 <!--pages/user/user.wxml-->
 <view class="avatar-wrapper">
-  <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+  <image src="cloud://project-a37od.7072-project-a37od-1300720385/icon/icon.png"></image>
   <view id="titlename">小黑屋</view>
 </view>
 
 <view class="tip" hidden="{{!nouser}}">zzz暂无违约zzz</view>
 <view class="container">
   <view class= "{{item.isTouchMove ? 'item-active' : 'item'}}" bindtouchstart='touchstart' bindtouchmove='touchmove' wx:for="{{list}}" wx:key='' data-index="{{index}}">
-    <image class="left" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+    <image class="left" src="cloud://project-a37od.7072-project-a37od-1300720385/icon/icon.png"></image>
     <view class="right">
       <view class="title">
         <view class="name">{{item.name}}</view>

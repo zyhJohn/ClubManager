@@ -6,42 +6,35 @@
     <view class="section">
       <!-- <view class="section__title">姓名</view> -->
       <!-- <input name="input" placeholder="请输入您的姓名"  value=""/> -->
-      <label class="fixedmsg">{{"姓名："+name}}</label>
+      <label class="fixedmsg">{{"姓名："+user_name}}</label>
     </view>
     <view class="section">
       <!-- <view class="section__title">学工号</view> -->
       <!-- <input name="input" placeholder="请输入您的学工号" value="{{no}}"/> -->
-      <label class="fixedmsg">{{"学工号："+no}}</label>
+      <label class="fixedmsg">{{"学工号："+user_no}}</label>
     </view>
   
 
-    <text class="title">社团信息</text>
+    <text class="title">活动信息</text>
     <view class="section">
-      <view class="section__title">申请社团名</view>
-      <input name="input" placeholder="请填写社团名" bindinput="getNameInput" />
+      <view class="section__title">承办社团名</view>
+      <input name="input" placeholder="请填写社团名" bindinput="getClubNameInput" />
     </view>
     <view class="section">
-      <view class="section__title">申请社团类别</view>
-      <input name="input" placeholder="活动人数" bindinput="getTypeInput" />
+      <view class="section__title">活动名</view>
+      <input name="input" placeholder="请填写活动名" bindinput="getActivityNameInput" />
     </view>
     <view class="section">
-      <view class="section__title">申请社团简介</view>
-      <textarea placeholder="请填写社团简介" auto-focus bindinput="getIntroduceInput" />
+      <view class="section__title">活动内容</view>
+      <textarea placeholder="请填写活动内容" auto-focus bindinput="getActivityContentInput" />
     </view>
     <view class="section">
-      <view class="section__title">申请理由</view>
-      <textarea placeholder="请填写申请理由" auto-focus bindinput="getReasonInput" />
+      <view class="section__title">活动场地</view>
+      <textarea placeholder="请填写活动场地" auto-focus bindinput="getActivityPlaceInput" />
     </view>
     <view class="section">
       <view class="section__title">备注</view>
       <textarea placeholder="如有特殊情况，请填写备注" auto-focus bindinput="getPsInput" />
-    </view>
-
-    <view class="container2" style="display:block;">
-      <view class='item'>
-        <text bindtap="read">阅读《社团守则》</text>
-        <image class="icon" src="{{url1}}" mode="widthFix"></image>
-      </view>
     </view>
 
   <view class="btn-area">

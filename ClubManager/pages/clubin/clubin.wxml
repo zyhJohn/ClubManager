@@ -1,6 +1,6 @@
 <!--pages/admin/admin.wxml-->
 <view class="avatar-wrapper">
-  <image src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+  <image src="cloud://project-a37od.7072-project-a37od-1300720385/icon/icon.png"></image>
   <view id="welcome">{{welcome}}</view>
 </view>
 <!-- <text>----------我是分割线----------\n</text> -->
@@ -10,7 +10,7 @@
 <view>
   <view class="container list-container">
     <view class="list-item" wx:for="{{ClubcheckList}}" bindtap="clubcheckdetail"  data-index="{{index}}">
-      <image class="left" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img2.jpg"></image>
+      <image class="left" src="cloud://project-a37od.7072-project-a37od-1300720385/img/img.png"></image>
       <view class="right">
         <view class="title1">
           <view class="clubname">{{item.clubname}}</view>

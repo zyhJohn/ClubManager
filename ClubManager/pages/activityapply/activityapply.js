@@ -7,19 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isread: false,
-
     user_name: "",
     user_no: "",
-    list:{},
-
     club_name:"",
-    club_type:"",
-    club_introduce:"",
-    creat_reason:"",
+    club_no:"",
+    activity_place:"",
     creat_time:"",
+    activity_content:"",
+    activity_name:"",
     ps:"",
 
+    list:{},
   },
 
   /**
@@ -40,35 +38,31 @@ Page({
   },
 
   onShow: function() {
-    if (this.data.isread) {
-      /*改变tubiao*/
-      this.setData({
-        url1: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/confirm.png"
-      })
-    }
+
   },
 
   /**
    * 获取input值
    */
-  getNameInput: function(e) {
+  getClubNameInput: function(e) {
     this.setData({
       club_name: e.detail.value,
     })
+    this.getClubNo()
   },
-  getTypeInput: function(e) {
+  getActivityNameInput: function(e) {
     this.setData({
-      club_type: e.detail.value,
+      activity_name: e.detail.value,
     })
   },
-  getIntroduceInput:function(e){
+  getActivityContentInput:function(e){
     this.setData({
-      club_introduce: e.detail.value,
+      activity_content: e.detail.value,
     })
   },
-  getReasonInput: function(e) {
+  getActivityPlaceInput: function(e) {
     this.setData({
-      creat_reason: e.detail.value,
+      activity_place: e.detail.value,
     })
   },
   getPsInput: function(e) {
@@ -77,25 +71,32 @@ Page({
     })
   },
 
-  read: function() {
-    wx.navigateTo({
-      url: '../clubattention/clubattention'
+  getClubNo: function(){
+    const db = wx.cloud.database()
+    db.collection('club').where({
+      club_name:this.data.club_name
+    }).get({
+      success: res => {
+        this.setData({
+          club_no: res.data[0]._id
+        })
+      }
     })
   },
 
   formSubmit: function(e) {
-    if (this.data.club_name === "" || this.data.club_type === "" || this.data.creat_reason === "" || this.data.club_introduce === ""){
+    if (this.data.club_name === "" || this.data.activity_name === "" || this.data.activity_content === "" || this.data.activity_place === ""){
       wx.showToast({
         title: '请先完整填写信息哦~',
         icon: 'none',
         duration: 2000
       });
-    }else if(this.data.isread){
+    }else if (this.data.club_no === "" || this.data.club_no === "undefined"){
       wx.showToast({
-        title: '请先阅读《社团守则》，并且同意',
+        title: '社团名称填写有误，请确认是否存在该社团',
         icon: 'none',
         duration: 2000
-      })
+      });
     }else{
       wx.showModal({
         title: '提示',
@@ -105,7 +106,7 @@ Page({
         success: res => {
           if (res.confirm) {
             console.log('用户点击确定')
-            this.putClubMsg()
+            this.putactivityMsg()
             wx.navigateBack({
               delta: 2,
             });
@@ -125,18 +126,20 @@ Page({
       })
   },
 
-  putClubMsg: function () {
+  putactivityMsg: function () {
     var TIME = util.formatTime(new Date());
     const db = wx.cloud.database()
-    db.collection('club_apply').add({
+    db.collection('activity').add({
       // 要插入的数据
       data: {
         user_no: app.globalData.usermsg.user_no,
         user_name: app.globalData.usermsg.user_name,
-        club_type: this.data.club_type,
-        club_introduce: this.data.club_introduce,
         club_name: this.data.club_name,
-        creat_reason: this.data.creat_reason,
+        club_no: this.data.club_no,
+        activity_place: this.data.activity_place,
+        activity_content: this.data.activity_content,
+        activity_name: this.data.activity_name,
+        activity_status: app.globalData.STATUS_ACTIVITY_WA,
         ps: this.data.ps,
         creat_time: TIME
       }

@@ -20,10 +20,10 @@ Page({
     status: "",
     ClubList:[],
     lisnone:true,
-    url1:"cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/ihome.png",
-    url2: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/adduser.png",
-    url3: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/add.png",
-    url4: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/user.png"
+    url1: "cloud://project-a37od.7072-project-a37od-1300720385/icon/home.png",
+    url2: "cloud://project-a37od.7072-project-a37od-1300720385/icon/group.png",
+    url3: "cloud://project-a37od.7072-project-a37od-1300720385/icon/manager.png",
+    url4: "cloud://project-a37od.7072-project-a37od-1300720385/icon/user.png"
   },
 
   /**
@@ -71,7 +71,7 @@ Page({
   },
 
   button4: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../user/user'
     })
   },
@@ -83,9 +83,9 @@ Page({
         url: '../admincheckToC/admincheckToC'
       })
     }
-    wx.navigateTo({
-      url: '../invite/invite?search_key='+this.data.searchkey,
-    })
+    //wx.navigateTo({
+    //  url: '../invite/invite?search_key='+this.data.searchkey,
+    //})
   },
 
   getUsermsg: function () {

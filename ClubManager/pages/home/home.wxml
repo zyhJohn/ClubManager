@@ -9,7 +9,7 @@
   <view class='content'>
     <input name="searchkey"  value ="{{searchkey}}"placeholder="搜索" bindinput="getSearchkey"/>
     <view class="divLine"></view>
-    <image bindtap="search" class="img" src="{{url2}}" mode="widthFix"></image>
+    <image bindtap="search" class="img" src="cloud://project-a37od.7072-project-a37od-1300720385/icon/search.png" mode="widthFix"></image>
   </view>
   </view>
 
@@ -18,27 +18,27 @@
 <view class="container list-container">
   <swiper indicator-dots="true" autoplay="true" interval="2500">
     <swiper-item>
-      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img3.jpg"></image>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://project-a37od.7072-project-a37od-1300720385/img/activityimg1.png"></image>
     </swiper-item>
     <swiper-item>
-      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img4.jpg"></image>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://project-a37od.7072-project-a37od-1300720385/img/activityimg2.png"></image>
     </swiper-item>
     <swiper-item>
-      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img5.jpg"></image>
+      <image class="img" style="width: 100%;" mode="widthFix" src="cloud://project-a37od.7072-project-a37od-1300720385/img/activityimg3.png"></image>
     </swiper-item>
   </swiper>
 </view>
 
 <text class="title">全部活动\n</text>
-<view class="tip" hidden="{{!hisnone}}">空空如也</view>
+<view class="tip" hidden="{{!lisnone}}">空空如也</view>
 <scroll-view scroll-y="true" style="height: 320rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
   <view class="container list-container">
-    <view class="list-item" data-index="{{index}}" bindtap="appoint2" wx:for="{{historyList}}">
-      <image class="left" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/img2.jpg"></image>
+    <view class="list-item" data-index="{{index}}" bindtap="activity" wx:for="{{ActivityList}}">
+      <image class="left" src="cloud://project-a37od.7072-project-a37od-1300720385/img/img.png"></image>
       <view class="right">
         <view class="title1">
-          <view class="time">{{item.venuename}}</view>
-          <view class="date">{{item.reserdate}}</view>
+          <view class="time">{{item.activityname}}</view>
+          <view class="date">{{item.clubname}}</view>
         </view>
         <view class="status">{{item.status}}</view>
         <!-- </view> -->

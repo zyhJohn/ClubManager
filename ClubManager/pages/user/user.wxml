@@ -2,7 +2,7 @@
 <view class="avatar-wrapper">
     <view>
       <view class="avatar">
-        <image style="border-radius:50%;" src="cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/person.png"></image>
+        <image style="border-radius:50%;" src="cloud://project-a37od.7072-project-a37od-1300720385/icon/icon.png"></image>
       </view>
     </view>
 </view>

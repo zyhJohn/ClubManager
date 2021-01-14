@@ -1,0 +1,16 @@
+<!--pages/detail/detail.wxml-->
+<!-- <text>这里是预约信息\n</text> -->
+<view id="contain">
+  <text class="title1">活动信息</text>
+  <view class="text" id="leadername">{{"申请人姓名:"+leadername}}</view>
+  <view class="text" id="leaderno">{{"申请人学号："+leaderno}}</view>
+  <view class="text" id="clubname">{{"承办社团名："+clubname}}</view>
+  <view class="text" id="activityname">{{"活动名："+activityname}}</view>
+  <view class="text" id="activitycontent">{{"活动内容："+activitycontent}}</view>
+  <view class="text" id="activityplace">{{"活动场地："+activityplace}}</view>
+  <view class="text" id="ps">{{"备注："+ps}}</view>
+
+  <view class="btn-area">
+    <button class="button1" bindtap="submit">审核通过</button>
+  </view>
+</view>

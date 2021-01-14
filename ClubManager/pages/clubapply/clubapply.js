@@ -47,7 +47,7 @@ Page({
     if (this.data.isread) {
       /*改变tubiao*/
       this.setData({
-        url1: "cloud://yuntest1-xt878.7975-yuntest1-xt878-1300763170/picture/confirm.png"
+        url1: "cloud://project-a37od.7072-project-a37od-1300720385/icon/check.png"
       })
     }
   },

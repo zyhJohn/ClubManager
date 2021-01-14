@@ -86,26 +86,26 @@ Page({
     const db = wx.cloud.database()
     db.collection('club').doc(this.data.clubid).update({
       data:{
-        club_member: this.data.member,
+        club_member: this.data.member+','+this.data.userno  ,
         num_member: ""+this.data.num,
       }
     }).then(res=>{
-      console.log(res)
      })
   },
 
   submit:function(){
-    const db = wx.cloud.database()
-    db.collection('clubcheck').doc(this.data.clubcheck_id).update({
-      data:{
-        apply_status: app.globalData.STATUS_CLUB_USER_OK,
-      }
-    }).then(res=>{
-      this.setClub()
-      wx.navigateBack({
-        delta: 1,
-      })
-      console.log(res)
-     })
+    wx.cloud.callFunction({
+      name: 'removeDatabase',
+      data: {
+        name: 'clubcheck',
+        id: this.data.clubcheck_id,
+      },
+      complete: res => {
+        this.setClub()
+        wx.navigateBack({
+          delta: 1,
+        })
+      },
+    })
   }
 })

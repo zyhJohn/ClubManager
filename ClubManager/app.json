@@ -7,6 +7,7 @@
     "pages/usermanager/usermanager",
 
     "pages/admincheck/admincheck",
+    "pages/adminactivitycheck/adminactivitycheck",
     "pages/adminactivity/adminactivity",
 
     "pages/admincheckToC/admincheckToC",
@@ -23,7 +24,6 @@
     "pages/clubmanager/clubmanager",
 
     "pages/activityapply/activityapply",
-    "pages/activityattention/activityattention",
     "pages/activitymanager/activitymanager"
   ],
   "window": {
